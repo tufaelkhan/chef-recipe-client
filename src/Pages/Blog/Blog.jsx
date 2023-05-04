@@ -31,10 +31,10 @@ const Blog = () => {
            </div>
            <div>
            <h2>Ans the Question?</h2>
-            <h4>Tell us the difference between nodejs and express js.</h4>
-            <p>Node.js is an open source, cross-platform javascript code that runs on servers. it uses asynchronous event driven model and is designed to build scalable network applications.it's build on google chrome v8 engine.</p>
+            <h4>What is a custom hook, and why will you create a custom hook?</h4>
+            <p>React custom hook is a reusable function. developer create to his product unique functionallity and awesome features. developer create new custom hook to unique features. custom hook give developer extra benefits.</p>
             <p>
-            express.js is a web application framework for node.js. that's what mainly makes the difference between express js and node . express to build a web application to easy and quickly.
+           A custom hook is a function that starts withe the word of use. These rules are in place because React relies on the order in which Hooks are called to associate the Hooks with a certain local state. Placing a Hook inside conditions may change this order, resulting in the subsequent Hooks failing to be called, and more likely than not, resulting in bugs
             </p>
            </div>
             <Footer></Footer>
