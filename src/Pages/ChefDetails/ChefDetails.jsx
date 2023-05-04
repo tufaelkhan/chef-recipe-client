@@ -6,6 +6,8 @@ import { Rating } from '@smastrom/react-rating'
 import NavigationBar from '../Shared/NavigationBar/NavigationBar';
 import Footer from '../Shared/Footer';
 import '@smastrom/react-rating/style.css'
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 const ChefDetails = () => {
     const chef = useLoaderData()
@@ -13,8 +15,8 @@ const ChefDetails = () => {
     const [favorite, setFavorite] = useState(true)
 
     // const handndleFavorite = (event) =>{
-
     // }
+    const notify = () => toast("favorite item added!");
     return (
        <div>
          <Container className='mt-5'>
@@ -54,7 +56,8 @@ const ChefDetails = () => {
           <h5 className='d-flex'><span>Rating:</span> <span><Rating style={{ maxWidth: 120 }} value={ratingName.second} readOnly/></span></h5>
           </Card.Text>
         </Card.Body>
-        <Button variant="primary">Favorite</Button>
+        <Button onClick={notify} variant="primary">Favorite</Button>
+        <ToastContainer></ToastContainer>
       </Card>
       <Card className='m-2'>
         <Card.Body>
@@ -69,7 +72,8 @@ const ChefDetails = () => {
           <h5 className='d-flex'><span>Rating:</span> <span><Rating style={{ maxWidth: 120 }} value={ratingName.first} readOnly/></span></h5>
           </Card.Text>
         </Card.Body>
-        <Button variant="primary">Favorite</Button>
+        <Button onClick={notify} variant="primary">Favorite</Button>
+        <ToastContainer></ToastContainer>
       </Card>
       <Card className='m-2'>
         <Card.Body>
@@ -84,7 +88,8 @@ const ChefDetails = () => {
           <h5 className='d-flex'><span>Rating:</span> <span><Rating style={{ maxWidth: 120 }} value={ratingName.third} readOnly/></span></h5>
           </Card.Text>
         </Card.Body>
-        <Button onClick={() => setFavorite(disabled={favorite})} variant="primary">Favorite</Button>
+        <Button onClick={notify} variant="primary">Favorite</Button>
+        <ToastContainer></ToastContainer>
       </Card>
     </CardGroup>
         </div>
