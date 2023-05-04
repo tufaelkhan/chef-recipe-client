@@ -4,8 +4,8 @@ import { FaFacebook, FaInstagram, FaPinterest,  } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <div>
-            <Row className='p-5 bg-secondary text-light'>
+        <div className='mt-4'>
+            <Row className='p-5 bg-secondary text-light pb-4'>
                 <h3 className='text-center mb-4 text-info'>Leading the way in innovation</h3>
                 <Col lg={3}>
                     <h4>Follow us</h4>

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import NavigationBar from '../Shared/NavigationBar/NavigationBar';
@@ -25,6 +25,7 @@ const Login = () => {
       const loggedUser = result.user;
       console.log(loggedUser);
       navigate(from, {replace: true})
+      event.target.reset()
     })
     .catch(error => {
       console.log(error);
@@ -54,7 +55,6 @@ const Login = () => {
         Login
       </Button><br />
       <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
         </Form.Text>
     </Form>
             </div>

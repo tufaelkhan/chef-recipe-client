@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { Button, Card, CardGroup, Container } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
 import {IoThumbsUpSharp } from "react-icons/io5";
+import { Rating } from '@smastrom/react-rating'
 import NavigationBar from '../Shared/NavigationBar/NavigationBar';
 import Footer from '../Shared/Footer';
+import '@smastrom/react-rating/style.css'
 
 const ChefDetails = () => {
     const chef = useLoaderData()
@@ -49,7 +51,7 @@ const ChefDetails = () => {
             <li>{method.third}</li>
             <li>{method.four}</li>
           </ol>
-          <h5>Rating: {ratingName.third}</h5>
+          <h5 className='d-flex'><span>Rating:</span> <span><Rating style={{ maxWidth: 120 }} value={ratingName.second} readOnly/></span></h5>
           </Card.Text>
         </Card.Body>
         <Button variant="primary">Favorite</Button>
@@ -64,7 +66,7 @@ const ChefDetails = () => {
             <li>{method.seven}</li>
             <li>{method.eight}</li>
           </ol>
-          <h5>Rating: {ratingName.first}</h5>
+          <h5 className='d-flex'><span>Rating:</span> <span><Rating style={{ maxWidth: 120 }} value={ratingName.first} readOnly/></span></h5>
           </Card.Text>
         </Card.Body>
         <Button variant="primary">Favorite</Button>
@@ -79,7 +81,7 @@ const ChefDetails = () => {
             <li>{method.ten}</li>
             <li>{method.twelve}</li>
           </ol>
-          <h5>Rating: {ratingName.four}</h5>
+          <h5 className='d-flex'><span>Rating:</span> <span><Rating style={{ maxWidth: 120 }} value={ratingName.third} readOnly/></span></h5>
           </Card.Text>
         </Card.Body>
         <Button onClick={() => setFavorite(disabled={favorite})} variant="primary">Favorite</Button>

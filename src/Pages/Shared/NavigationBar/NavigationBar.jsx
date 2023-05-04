@@ -27,7 +27,6 @@ const NavigationBar = () => {
           </Nav>
           <Nav>
             {user && <FaUserCircle style={{fontSize: '2rem'}}></FaUserCircle>}
-
             {user ? 
             <Button onClick={handleLogOut} variant="dark">LogOut</Button>:
             <Link to='/login'>
