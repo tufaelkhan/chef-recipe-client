@@ -1,25 +1,35 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { FaFacebook, FaInstagram, FaPinterest } from 'react-icons/fa';
+import { FaFacebook, FaInstagram,  FaPinterest,  } from 'react-icons/fa';
 
 const Footer = () => {
     return (
         <div>
-            <Row className='p-5 bg-secondary'>
+            <Row className='p-5 bg-secondary text-light'>
+                <h3></h3>
                 <Col lg={3}>
                     <h4>Follow us</h4>
-                    <h5><FaFacebook></FaFacebook> Facebook</h5>
-                    <h5><FaInstagram></FaInstagram> Instatram</h5>
-                    <h5><FaPinterest></FaPinterest> Pinterest</h5>
+                    <h6><FaFacebook></FaFacebook> Facebook</h6>
+                    <h6><FaInstagram></FaInstagram> Instatram</h6>
+                    <h6><FaPinterest></FaPinterest> Pinterest</h6>
                     </Col>
                 <Col lg={3}>
-                    Second, but last
+                    <h4>Sections</h4>
+                    <h6>Blog</h6>
+                    <h6>About us</h6>
+                    <h6>Recipes</h6>
                 </Col>
                 <Col lg={3}>
-                    Third, but second
+                    <h4>Special recipe</h4>
+                    <h6>Biryani </h6>
+                    <h6>Kala Bhuna</h6>
+                    <h6>Shorshe ilish</h6>
                 </Col>
                 <Col lg={3}>
-                    Third, but second
+                    <h4>Contact Us</h4>
+                    <h6> Email: deshirecife@gmail.com  </h6>
+                    <h5> Phone: + 04049584958</h5>
+                    <h5>Whatsapp: + 6465465969</h5>
                 </Col>
             </Row>
         </div>
