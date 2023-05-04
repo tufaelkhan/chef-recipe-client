@@ -5,6 +5,7 @@ import RightNav from '../Shared/RightNav/RightNav';
 import Slider from '../Shared/Slider/Slider';
 import NavigationBar from '../Shared/NavigationBar/NavigationBar';
 import Chef from './Chef';
+import Footer from '../Shared/Footer';
 
 const Home = () => {
     const [chefs, setChef] = useState([]);
@@ -38,6 +39,7 @@ const Home = () => {
         </Col>
       </Row>
     </Container>
+    <Footer></Footer>
         </div>
     );
 };

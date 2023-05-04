@@ -3,6 +3,7 @@ import NavigationBar from '../Shared/NavigationBar/NavigationBar';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthPrivider';
+import Footer from '../Shared/Footer';
 
 const Register = () => {
     const { createUser } = useContext(AuthContext)
@@ -27,7 +28,8 @@ const Register = () => {
     }
 
     return (
-        <Container className='mt-5'>
+        <div>
+            <Container className='mt-5'>
             <NavigationBar></NavigationBar>
             <div>
                 <Form className='mx-auto w-25' onSubmit={handleRegister}>
@@ -62,6 +64,8 @@ const Register = () => {
                 </Form>
             </div>
         </Container>
+        <Footer></Footer>
+        </div>
     );
 };
 

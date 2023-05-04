@@ -4,6 +4,7 @@ import { FaGithub, FaGoogle } from 'react-icons/fa';
 import NavigationBar from '../Shared/NavigationBar/NavigationBar';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthPrivider';
+import Footer from '../Shared/Footer';
 
 
 const Login = () => {
@@ -30,7 +31,8 @@ const Login = () => {
     })
   }
     return (
-        <Container className='justify-center mt-5'>
+     <div>
+         <Container className='justify-center mt-5'>
             <NavigationBar></NavigationBar>
             <div>
             <Form className='mx-auto w-25' onSubmit={handleLogin}>
@@ -57,6 +59,8 @@ const Login = () => {
     </Form>
             </div>
         </Container>
+        <Footer></Footer>
+     </div>
     );
 };
 

@@ -3,6 +3,7 @@ import { Button, Card, CardGroup, Container } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
 import {IoThumbsUpSharp } from "react-icons/io5";
 import NavigationBar from '../Shared/NavigationBar/NavigationBar';
+import Footer from '../Shared/Footer';
 
 const ChefDetails = () => {
     const chef = useLoaderData()
@@ -13,7 +14,8 @@ const ChefDetails = () => {
 
     // }
     return (
-        <Container className='mt-5'>
+       <div>
+         <Container className='mt-5'>
             <NavigationBar></NavigationBar>
         <div>
         <Card>
@@ -85,6 +87,8 @@ const ChefDetails = () => {
     </CardGroup>
         </div>
       </Container>
+      <Footer></Footer>
+       </div>
     );
 };
 
