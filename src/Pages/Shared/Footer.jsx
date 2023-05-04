@@ -1,12 +1,12 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { FaFacebook, FaInstagram,  FaPinterest,  } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaPinterest,  } from 'react-icons/fa';
 
 const Footer = () => {
     return (
         <div>
             <Row className='p-5 bg-secondary text-light'>
-                <h3></h3>
+                <h3 className='text-center mb-4 text-info'>Leading the way in innovation</h3>
                 <Col lg={3}>
                     <h4>Follow us</h4>
                     <h6><FaFacebook></FaFacebook> Facebook</h6>
