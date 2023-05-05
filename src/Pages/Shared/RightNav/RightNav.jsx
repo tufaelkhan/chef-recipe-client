@@ -38,9 +38,15 @@ const RightNav = () => {
             </div>
             </div>
             <div>
-                <h2>Popular Drinks Item</h2>
+                <h2  className='m-4'>Popular Drinks Item</h2>
                 <div>
-                    
+                <img className='m-3' style={{height: '200px'}} src="https://images.pexels.com/photos/338713/pexels-photo-338713.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" />
+                <img className='' style={{height: '200px'}} src="https://www.acouplecooks.com/wp-content/uploads/2021/05/Strawberry-Mojito-008.jpg" alt="" />
+                </div>
+                <div>
+                <img className='' style={{height: '200px'}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqXpRacYJ8wMJ0xen3GsUpGlE8cVVh5JmJBEVcjLTgZICG1AIDGsa6S6eD7qsNlyTn6ng&usqp=CAU" alt="" />
+                <img className='mt-3' style={{height: '200px'}} src="https://cdn-food.tribune.com.pk/gallery/NGCyPRm8QAcM4xugOZcfJquaj0OCIccA9dDqqpFy.jpeg" alt="" />
+                <img className='mt-3' style={{height: '200px'}} src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2009/4/14/1/FNM060109Insert004_s4x3.jpg.rend.hgtvcom.616.462.suffix/1382538972575.jpeg" alt="" />
                 </div>
             </div>
         </div>
