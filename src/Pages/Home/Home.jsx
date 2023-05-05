@@ -25,7 +25,7 @@ const Home = () => {
       <Row>
         <Col lg={8}>
            <div>
-           <h2 className='pt-4'>Favorite Chefs</h2>
+           <h2 className='pt-4'>All Available Chefs</h2>
             {
                 chefs.map(chef => <Chef
                 key={chef.id}

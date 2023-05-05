@@ -12,13 +12,14 @@ import app from '../../Firebase/firebase.config';
 const Login = () => {
   const auth = getAuth(app)
   const [user, setUser]=useState(null)
+  const [error, setError] = useState('')
   const provider = new GoogleAuthProvider();
   const gitHubProvider = new GithubAuthProvider()
 
   const {signIn} = useContext(AuthContext)
   const navigate = useNavigate()
   const location = useLocation()
-  const from = location?.state?.from?.pathname || '/chef';
+  const from = location?.state?.from?.pathname || '/';
 
 const handleGoogleLogin = () =>{
   signInWithPopup(auth, provider)
@@ -46,11 +47,19 @@ const handleGithubLogin = () =>{
 
   const handleLogin = (event) =>{
     event.preventDefault();
+    setError('')
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
 
     console.log(email, password);
+    if(/^[A-Za-z]\w{7,14}$/.test(password)){
+      setError('please add at last one uppercase')
+      return ;
+  }else if(password.length < 8){
+    setError('password must be 8 chracter')
+    return ;
+  }
     signIn(email, password)
     .then(result => {
       const loggedUser = result.user;
@@ -83,9 +92,10 @@ const handleGithubLogin = () =>{
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
         <p><small>Don't have an Account? <Link to='/register'>Register</Link></small></p>
       </Form.Group>
+      <h5 className='text-danger'>{error}</h5>
      <Button variant="primary" type="submit">
         Login
-      </Button><br />
+      </Button>
       <Form.Text className="text-muted">
         </Form.Text>
     </Form>

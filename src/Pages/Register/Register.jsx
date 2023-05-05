@@ -12,7 +12,6 @@ const Register = () => {
 
     const handleRegister= (event) =>{
         event.preventDefault();
-        setError('')
         const form = event.target;
         const name = form.name.value;
         const email = form.email.value;
@@ -71,6 +70,7 @@ const Register = () => {
                     <Form.Text className="text-danger">
                         {error}
                     </Form.Text> <br/>
+                    <h3 className='text-primary'>{success}</h3>
                     <Button variant="primary" type="submit">
                         Register
                     </Button><br />

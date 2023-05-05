@@ -8,6 +8,7 @@ import Footer from '../Shared/Footer';
 import '@smastrom/react-rating/style.css'
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
+import { FaCookieBite } from 'react-icons/fa';
 
 const ChefDetails = () => {
     const chef = useLoaderData()
@@ -46,6 +47,7 @@ const ChefDetails = () => {
       <Card className='m-2'>
         <Card.Body>
           <Card.Title>Recipe Name: {recipeName.first}</Card.Title>
+          <Card.Title>Cooking Method:  <FaCookieBite></FaCookieBite></Card.Title>
           <Card.Text>
           <ol>
             <li>{method.first}</li>
@@ -53,7 +55,7 @@ const ChefDetails = () => {
             <li>{method.third}</li>
             <li>{method.four}</li>
           </ol>
-          <h5 className='d-flex'><span>Rating:</span> <span><Rating style={{ maxWidth: 120 }} value={ratingName.second} readOnly/></span></h5>
+          <h5 className='d-flex'><span>Rating:</span><span>{ratingName.second}</span> <span><Rating style={{ maxWidth: 120 }} value={ratingName.second} readOnly/></span></h5>
           </Card.Text>
         </Card.Body>
         <Button onClick={notify} variant="primary">Favorite</Button>
@@ -62,6 +64,7 @@ const ChefDetails = () => {
       <Card className='m-2'>
         <Card.Body>
           <Card.Title>Recipe Name: {recipeName.second}</Card.Title>
+          <Card.Title>Cooking Method:  <FaCookieBite></FaCookieBite></Card.Title>
           <Card.Text>
           <ol>
             <li>{method.five}</li>
@@ -69,7 +72,7 @@ const ChefDetails = () => {
             <li>{method.seven}</li>
             <li>{method.eight}</li>
           </ol>
-          <h5 className='d-flex'><span>Rating:</span> <span><Rating style={{ maxWidth: 120 }} value={ratingName.first} readOnly/></span></h5>
+          <h5 className='d-flex'><span>Rating:</span><span>{ratingName.first}</span> <span><Rating style={{ maxWidth: 120 }} value={ratingName.first} readOnly/></span></h5>
           </Card.Text>
         </Card.Body>
         <Button onClick={notify} variant="primary">Favorite</Button>
@@ -77,7 +80,8 @@ const ChefDetails = () => {
       </Card>
       <Card className='m-2'>
         <Card.Body>
-          <Card.Title>Recipe Name: {recipeName.four}</Card.Title>
+          <Card.Title className='mb-3'>Recipe Name: {recipeName.four}</Card.Title>
+          <Card.Title>Cooking Method:  <FaCookieBite></FaCookieBite></Card.Title>
           <Card.Text>
           <ol>
             <li>{method.nine}</li>
@@ -85,7 +89,7 @@ const ChefDetails = () => {
             <li>{method.ten}</li>
             <li>{method.twelve}</li>
           </ol>
-          <h5 className='d-flex'><span>Rating:</span> <span><Rating style={{ maxWidth: 120 }} value={ratingName.third} readOnly/></span></h5>
+          <h5 className='d-flex'><span>Rating: </span><span>{ratingName.third} </span> <span><Rating style={{ maxWidth: 120 }} value={ratingName.third} readOnly /></span></h5>
           </Card.Text>
         </Card.Body>
         <Button onClick={notify} variant="primary">Favorite</Button>
