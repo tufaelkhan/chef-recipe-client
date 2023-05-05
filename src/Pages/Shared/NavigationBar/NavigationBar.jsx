@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
-import {  FaSatelliteDish, FaUserCircle } from 'react-icons/fa';
+import {  FaUserCircle, FaSatelliteDish } from 'react-icons/fa';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthPrivider';
 
@@ -16,7 +16,7 @@ const NavigationBar = () => {
         <div>
              <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
-        <Navbar.Brand href="#home"><FaSatelliteDish></FaSatelliteDish> shape hunter</Navbar.Brand>
+        <Navbar.Brand href="#home"> <FaSatelliteDish></FaSatelliteDish> shape hunter</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mx-auto">
