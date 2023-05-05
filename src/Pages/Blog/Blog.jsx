@@ -5,7 +5,7 @@ import { Container } from 'react-bootstrap';
 
 const Blog = () => {
     return (
-        <Container>
+        <Container className='mt-5'>
             <NavigationBar></NavigationBar>
            <div>
            <h2>Ans the Question?</h2>

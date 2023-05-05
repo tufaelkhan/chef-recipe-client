@@ -1,17 +1,33 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import NavigationBar from '../Shared/NavigationBar/NavigationBar';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthPrivider';
 import Footer from '../Shared/Footer';
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import app from '../../Firebase/firebase.config';
 
 
 const Login = () => {
+  const auth = getAuth(app)
+  const provider = new GoogleAuthProvider();
+
   const {signIn} = useContext(AuthContext)
   const navigate = useNavigate()
   const location = useLocation()
-  const from = location?.state?.from?.pathname || '/'
+  const from = location?.state?.from?.pathname || '/chef';
+
+const handleGoogleLogin = () =>{
+  signInWithPopup(auth, provider)
+  .then(result => {
+    const googleLogin = result.user;
+    console.log(googleLogin)
+  })
+  .catch(error => {
+    console.log(error.message)
+  })
+}
 
   const handleLogin = (event) =>{
     event.preventDefault();
@@ -38,7 +54,7 @@ const Login = () => {
             <div>
             <Form className='mx-auto w-25' onSubmit={handleLogin}>
             <h2>Login with</h2>
-            <Button variant="outline-primary" className='mb-3'><FaGoogle></FaGoogle> Login with Google</Button>
+            <Button onClick={handleGoogleLogin} variant="outline-primary" className='mb-3'><FaGoogle></FaGoogle> Login with Google</Button>
       <Button variant="outline-secondary"><FaGithub></FaGithub> Login with Github</Button>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
