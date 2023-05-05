@@ -1,13 +1,16 @@
 import React from 'react';
 import NavigationBar from '../Shared/NavigationBar/NavigationBar';
 import Footer from '../Shared/Footer';
-import { Container } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
+import { FaFilePdf } from 'react-icons/fa';
 
 const Blog = () => {
     return (
-        <Container className='mt-5'>
+        <div>
+            <Container className='mt-5'>
             <NavigationBar></NavigationBar>
            <div>
+           <Button variant="danger">Generate PDF <FaFilePdf></FaFilePdf> </Button>
            <h2>Ans the Question?</h2>
             <h4>Tell us the differences between uncontrolled and controlled components</h4>
             <p>Controlled Component Use controlled component. Rather than accessing the value of the input through the reference of the element, we can store the value in React state. then we using the state value</p>
@@ -37,8 +40,9 @@ const Blog = () => {
            A custom hook is a function that starts withe the word of use. These rules are in place because React relies on the order in which Hooks are called to associate the Hooks with a certain local state. Placing a Hook inside conditions may change this order, resulting in the subsequent Hooks failing to be called, and more likely than not, resulting in bugs
             </p>
            </div>
-            <Footer></Footer>
         </Container>
+            <Footer></Footer>
+        </div>
     );
 };
 

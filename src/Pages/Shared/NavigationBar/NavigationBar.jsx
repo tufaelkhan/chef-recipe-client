@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import {  FaSatelliteDish, FaUserCircle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthPrivider';
 
 const NavigationBar = () => {
@@ -20,10 +20,12 @@ const NavigationBar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mx-auto">
-            <Nav.Link href="#features"><Link to='/' className='text-decoration-none text-dark'>Home</Link></Nav.Link>
-            <Nav.Link href="#features"><Link to='/blog'className='text-decoration-none text-dark'>Blog</Link></Nav.Link>
-            <Nav.Link href="#pricing"><Link to='/login'className='text-decoration-none text-dark'>Login</Link></Nav.Link>
-            <Nav.Link href="#pricing"><Link to='/register'className='text-decoration-none text-dark'>Register</Link></Nav.Link>
+          {/* className='text-decoration-none text-dark' */}
+
+           <Nav.Link href="#features"><NavLink to='/'  className={({ isActive }) => (isActive ? 'text-primary' : 'text-dark text-decoration-none')}>Home</NavLink></Nav.Link>
+            <Nav.Link href="#features"><NavLink to='/blog'className={({ isActive }) => (isActive ? 'text-primary' : 'text-dark text-decoration-none')}>Blog</NavLink></Nav.Link>
+            <Nav.Link href="#pricing"><NavLink to='/login'className={({ isActive }) => (isActive ? 'text-primary' : 'text-dark text-decoration-none')}>Login</NavLink></Nav.Link>
+            <Nav.Link href="#pricing"><NavLink to='/register'className={({ isActive }) => (isActive ? 'text-primary' : 'text-dark text-decoration-none')}>Register</NavLink></Nav.Link>
           </Nav>
           <Nav>
             {user && <FaUserCircle style={{fontSize: '2rem'}}></FaUserCircle>}

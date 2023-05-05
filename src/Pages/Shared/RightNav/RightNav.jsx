@@ -37,6 +37,12 @@ const RightNav = () => {
                 <h6 className='m-3'>A rich and spicy beef curry cooked with a variety of aromatic spices.</h6>
             </div>
             </div>
+            <div>
+                <h2>Popular Drinks Item</h2>
+                <div>
+                    
+                </div>
+            </div>
         </div>
     );
 };
