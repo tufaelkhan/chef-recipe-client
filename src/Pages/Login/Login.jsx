@@ -1,17 +1,19 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import NavigationBar from '../Shared/NavigationBar/NavigationBar';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthPrivider';
 import Footer from '../Shared/Footer';
-import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from '../../Firebase/firebase.config';
 
 
 const Login = () => {
   const auth = getAuth(app)
+  const [user, setUser]=useState(null)
   const provider = new GoogleAuthProvider();
+  const gitHubProvider = new GithubAuthProvider()
 
   const {signIn} = useContext(AuthContext)
   const navigate = useNavigate()
@@ -23,9 +25,22 @@ const handleGoogleLogin = () =>{
   .then(result => {
     const googleLogin = result.user;
     console.log(googleLogin)
+    setUser(googleLogin)
   })
   .catch(error => {
     console.log(error.message)
+  })
+}
+
+const handleGithubLogin = () =>{
+  signInWithPopup(auth, gitHubProvider)
+  .then(result =>{
+    const gitHubLogin = result.user;
+    console.log(gitHubLogin);
+    setUser(gitHubLogin)
+  })
+  .catch(error => {
+    console.log(error);
   })
 }
 
@@ -55,7 +70,8 @@ const handleGoogleLogin = () =>{
             <Form className='mx-auto w-25' onSubmit={handleLogin}>
             <h2>Login with</h2>
             <Button onClick={handleGoogleLogin} variant="outline-primary" className='mb-3'><FaGoogle></FaGoogle> Login with Google</Button>
-      <Button variant="outline-secondary"><FaGithub></FaGithub> Login with Github</Button>
+      <Button onClick={handleGithubLogin} variant="outline-secondary">
+        <FaGithub></FaGithub> Login with Github</Button>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control type="email" name='email' placeholder="Enter email" required/>
@@ -67,7 +83,7 @@ const handleGoogleLogin = () =>{
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
         <p><small>Don't have an Account? <Link to='/register'>Register</Link></small></p>
       </Form.Group>
-      <Button variant="primary" type="submit">
+     <Button variant="primary" type="submit">
         Login
       </Button><br />
       <Form.Text className="text-muted">
