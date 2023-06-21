@@ -8,7 +8,7 @@ import Footer from '../Shared/Footer';
 import '@smastrom/react-rating/style.css'
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
-import { FaCookieBite } from 'react-icons/fa';
+import { FaCookie, FaCookieBite } from 'react-icons/fa';
 
 const ChefDetails = () => {
     const chef = useLoaderData()
@@ -64,7 +64,7 @@ const ChefDetails = () => {
       <Card className='m-2'>
         <Card.Body>
           <Card.Title>Recipe Name: {recipeName.second}</Card.Title>
-          <Card.Title>Cooking Method:  <FaCookieBite></FaCookieBite></Card.Title>
+          <Card.Title>Cooking Method:  <FaCookie></FaCookie></Card.Title>
           <Card.Text>
           <ol>
             <li>{method.five}</li>
@@ -81,7 +81,7 @@ const ChefDetails = () => {
       <Card className='m-2'>
         <Card.Body>
           <Card.Title className='mb-3'>Recipe Name: {recipeName.four}</Card.Title>
-          <Card.Title>Cooking Method:  <FaCookieBite></FaCookieBite></Card.Title>
+          <Card.Title>Cooking Method: <FaCookieBite></FaCookieBite> </Card.Title>
           <Card.Text>
           <ol>
             <li>{method.nine}</li>
