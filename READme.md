@@ -4,7 +4,7 @@
 #1. dotenv.
 #3. dotcors.
 
-#Server Site Link: [https://github.com/programming-hero-web-course-4/b7a10-chef-recipe-hunter-server-side-tufaelkhan].
+#Server Site Link: [https://github.com/tufaelkhan/chef-recepe-server].
 
 #Client site using framework and pacakage.
 #1. react.js.
@@ -16,6 +16,6 @@
 #3. react toastify.
 #3. react rating.
 
-#Client Site Link: [https://github.com/programming-hero-web-course-4/b7a10-chef-recipe-hunter-client-side-tufaelkhan].
+#Client Site Link: [https://github.com/tufaelkhan/chef-recipe-client].
 
 #live Site Link: hosting firebase [https://bangladeshi-special-recipe.web.app]
